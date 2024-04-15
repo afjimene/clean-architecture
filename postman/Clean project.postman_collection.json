@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "6ec8eaeb-42b6-44d8-bf15-a2d302f5857c",
+		"name": "Clean project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "524278"
+	},
+	"item": [
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pepito\",\n    \"statusId\": 1,\n    \"stock\": 100,\n    \"description\": \"la prueba\",\n    \"price\": 1000.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/product",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/product/1",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"pepito\",\n    \"statusId\": 1,\n    \"stock\": 200,\n    \"description\": \"la prueba\",\n    \"price\": 1000.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/product",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "metrics http.server.requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/actuator/metrics/http.server.requests",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"http.server.requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metric names",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/actuator/metrics",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metrics get product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ec2-54-235-47-135.compute-1.amazonaws.com:8080/actuator/metrics/get.product",
+					"host": [
+						"ec2-54-235-47-135",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"get.product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mock discounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://661aa70f65444945d04e3afa.mockapi.io/discount/v1/discount",
+					"protocol": "https",
+					"host": [
+						"661aa70f65444945d04e3afa",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"discount",
+						"v1",
+						"discount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

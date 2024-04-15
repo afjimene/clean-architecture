@@ -1,0 +1,40 @@
+package com.ecommerce.product.model;
+
+import java.math.BigDecimal;
+
+public class ProductRequestModel {
+
+    String name;
+    Integer statusId;
+    Long stock;
+    String description;
+    BigDecimal price;
+
+    public ProductRequestModel(String name, Integer statusId, Long stock, String description, BigDecimal price) {
+        this.name = name;
+        this.statusId = statusId;
+        this.stock = stock;
+        this.description = description;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getStatusId() {
+        return statusId;
+    }
+
+    public Long getStock() {
+        return stock;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+}

@@ -1,0 +1,151 @@
+
+openapi: 3.0.0
+info:
+  title: Swagger Products - OpenAPI 3.
+  description: "This is a sample Product based on the OpenAPI 3.0 specification."
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: afjimene@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+tags:
+  - name: Products
+    description: Everything about Product
+paths:
+  /product:
+    put:
+      tags:
+        - product
+      summary: Update an existing product
+      description: Update an existing product by Id
+      operationId: updateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Product not found
+        "405":
+          description: Validation exception
+    post:
+      tags:
+        - product
+      summary: Add a new product to the eCommerce
+      description: Add a new product to the eCommerce
+      operationId: addProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "405":
+          description: Invalid input
+  /product/{productId}:
+    get:
+      tags:
+        - product
+      summary: Find product by ID
+      description: Returns a single product
+      operationId: getProductById
+      parameters:
+      - name: productId
+        in: path
+        description: ID of product to return
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStatus'
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Product not found
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+      - name
+      - statusId
+      - stock
+      - description
+      - price
+      properties:
+        id:
+          type: integer
+          example: 10
+        name:
+          type: string
+          example: tablet
+        statusId:
+          type: integer
+          example: 1
+        stock:
+          type: integer
+          format: int64
+          example: 2000
+        description:
+          type: string
+          example: This is a tech product
+        price:
+          type: number
+          format: double
+    ProductStatus:
+      type: object
+      required:
+        - name
+        - stock
+        - description
+        - price
+      properties:
+        id:
+          type: integer
+          example: 10
+        name:
+          type: string
+          example: tablet
+        status:
+          type: string
+          example: Active
+        stock:
+          type: integer
+          format: int64
+          example: 2000
+        description:
+          type: string
+          example: This is a tech product
+        price:
+          type: number
+          format: double
+        discount:
+          type: integer
+          format: int64
+        finalPrice:
+          type: number
+          format: double
