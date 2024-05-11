@@ -1,11 +1,5 @@
 # Readme
 
-## Selección de nube
-Se utilizó AWS por ser una nube ampliamente utilizada, de este se utilizó el servicio de EC2 para 
-acceder a un servidor linux que permitiera ejecutar el servicio de manera simple.
-Para escalar este servicio se hace necesario crear nuevos puertos y agregar un balanceador de carga 
-que le permita intercambiar entre los diferentes servicios.
-
 ## Estrategia de Monitoreo
 
 Este proyecto utiliza la libreria de [Micrometer](https://micrometer.io/) la cual ofrece conexiones 
@@ -36,10 +30,6 @@ Entre los patrones de diseño utilizados están:
 ## Cómo ejecutar el proyecto
 Este proyecto esta basado en spring-boot para su ejecución
 `mvn spring-boot:run`
-
-## JMeter
-Realizando una ejecución de este proyecto con las características mínimas en un servidor linux tiene
-una capacidad de 25 peticiones por minuto. Se incluye el archivo "Thread Group.jmx"
 
 ## Postman
 Se incluyen las diferentes peticiones en la carpeta de "postman" con los ejemplos de las peticiones
